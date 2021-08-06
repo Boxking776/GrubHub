@@ -1,0 +1,116 @@
+local colors = {
+    SchemeColor = Color3.fromRGB(188, 133, 23),
+    Background = Color3.fromRGB(26, 32, 58),
+    Header = Color3.fromRGB(38, 45, 71),
+    TextColor = Color3.fromRGB(200, 200, 200),
+    ElementColor = Color3.fromRGB(38, 45, 71)
+}
+
+local function LoadExtras(s,l)
+
+    local LoadedUI
+
+    for i,v in pairs(game.CoreGui:GetDescendants()) do
+    if v.Name == "MainHeader" then
+        if v.Parent.Name == "Main" then
+        LoadedUI = v.Parent
+        else
+            warn("Script Inproperly Loaded - Some features may not work")
+        end
+    end
+end
+
+wait(0.5)
+
+if LoadedUI == nil then
+        game.Players.LocalPlayer:Kick("UI Inproperly Loaded - Please tell Boxking776")
+    end
+
+    local Settings = s:NewTab("Settings")
+    
+    local ThemeSection = Settings:NewSection("Theme Selection")
+    
+    local Others = Settings:NewSection("Others")
+    local ScreenLock = Settings:NewSection("Position Locks")
+        
+    for theme, color in pairs(colors) do
+        ThemeSection:NewColorPicker(theme, "Change your "..theme, color, function(color3)
+            l:ChangeColor(theme, color3)
+        end)
+    end
+
+    Others:NewKeybind("UI Close Keybind", "Closes the UI when Pressed", Enum.KeyCode.RightShift, function()
+
+                if LoadedUI.Visible == true then
+                    LoadedUI:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
+                    wait(1)
+                    LoadedUI.Visible = false
+                else
+                    LoadedUI.Visible = true
+                    LoadedUI:TweenPosition(UDim2.new(0, 0, 0, 0))                
+            end
+    end)
+
+    ScreenLock:Button("Top Left",function()
+        LoadedUI:TweenPosition(UDim2.new(0, 0, 0, 0))
+    end)
+
+    ScreenLock:Button("Bottom Left",function()
+        LoadedUI:TweenPosition(UDim2.new(0, 0, 0.69, 0))
+    end)
+
+    ScreenLock:Button("Top Right",function()
+        LoadedUI:TweenPosition(UDim2.new(0.685, 0, 0, 0))
+    end)
+
+    ScreenLock:Button("Bottom Right",function()
+        LoadedUI:TweenPosition(UDim2.new(0.685, 0, 0.69, 0))
+    end)
+
+    ScreenLock:Button("Middle",function()
+        
+        local str = tostring(LoadedUI.Size)
+
+        local String1 = string.gsub(str, "{", "")
+
+        local String2 = string.gsub(String1, "}", "")
+
+        local SS = string.split(String2,",")
+
+        local X = tonumber(SS[2]) / 2
+        local Y = tonumber(SS[4]) / 2
+
+        LoadedUI:TweenPosition(UDim2.new(0.5,-X , 0.5,-Y))
+
+    end)
+    
+    Others:Button("Lag Reduction Mode",function()
+        local decalsyeeted = true
+    local g = game
+    local w = g.Workspace
+    local l = g.Lighting
+    local t = w.Terrain
+    t.WaterWaveSize = 0
+    t.WaterWaveSpeed = 0
+    t.WaterReflectance = 0
+    t.WaterTransparency = 0
+    l.GlobalShadows = false
+    l.FogEnd = 9e9
+    l.Brightness = 0
+    settings().Rendering.QualityLevel = "Level01"
+    for i,v in pairs(g:GetDescendants()) do
+        if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+            v.Material = "Plastic"
+    v.Reflectance = 0
+    elseif v:IsA("Decal") and decalsyeeted then 
+    v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+    v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Fire") or v:IsA("Smoke") then
+        v:Destroy()
+        end
+    end
+end)
+end
+
+return LoadExtras
