@@ -1,0 +1,87 @@
+return function(text,yestext,notext,yescallback,nocallback,screenguiname)
+
+local yesfn = yescallback or function()end
+local nofn = nocallback or function()end
+
+local Notification = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Yes = Instance.new("TextButton")
+local No = Instance.new("TextButton")
+local Message = Instance.new("TextLabel")
+
+
+Notification.Name = screenguiname or "Grubhub Notification"
+Notification.Parent = game.CoreGui
+Notification.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Notification
+Main.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+Main.BackgroundTransparency = 0.2
+Main.Position = UDim2.new(0.376174331, 0, 0.395017743, 0)
+Main.Size = UDim2.new(0, 374, 0, 218)
+Main.Visible = true
+Main.Active = true
+Main.Draggable = true
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Main
+TopBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TopBar.BackgroundTransparency = 0.200
+TopBar.Position = UDim2.new(-0.000830992009, 0, -0.00406485749, 0)
+TopBar.Size = UDim2.new(0, 374, 0, 42)
+
+Title.Name = "Title"
+Title.Parent = TopBar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Size = UDim2.new(0, 374, 0, 42)
+Title.Font = Enum.Font.Nunito
+Title.Text = "GrubHub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 24.000
+Title.TextWrapped = true
+
+Yes.Name = "Yes"
+Yes.Parent = Main
+Yes.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+Yes.Position = UDim2.new(0.0802139044, 0, 0.674312115, 0)
+Yes.Size = UDim2.new(0, 145, 0, 44)
+Yes.Font = Enum.Font.SourceSans
+Yes.Text = yestext or "Yes"
+Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
+Yes.TextSize = 20.000
+Yes.MouseButton1Down:connect(function()
+Notification:Destroy()
+yesfn()
+end)
+
+No.Name = "No"
+No.Parent = Main
+No.BackgroundColor3 = Color3.fromRGB(206, 0, 0)
+No.Position = UDim2.new(0.532085538, 0, 0.674312115, 0)
+No.Size = UDim2.new(0, 145, 0, 44)
+No.Font = Enum.Font.SourceSans
+No.Text = notext or "No"
+No.TextColor3 = Color3.fromRGB(0, 0, 0)
+No.TextSize = 20.000
+No.TextWrapped = true
+No.MouseButton1Down:connect(function()
+Notification:Destroy()
+nofn()
+end)
+
+Message.Name = "Message"
+Message.Parent = Main
+Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message.BackgroundTransparency = 1
+Message.Position = UDim2.new(0.0989304855, 0, 0.231753707, 0)
+Message.Size = UDim2.new(0, 300, 0, 75)
+Message.Font = Enum.Font.SourceSans
+Message.Text = text
+Message.TextColor3 = Color3.fromRGB(225, 225, 225)
+Message.TextScaled = true
+Message.TextSize = 14.000
+end
