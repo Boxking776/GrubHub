@@ -1,0 +1,3 @@
+local codes = {"Ultra225k","MoreCoins180k","EzDiamonds150k","Triple80k","Lucky50k","Super25k","Release"}
+
+return codes
