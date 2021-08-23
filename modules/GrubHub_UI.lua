@@ -514,6 +514,10 @@ function Library:NewTab(Name, Image)
 		end
 	end)
 
+    function Funcs:NewSection()
+        return Funcs
+    end
+
 	function Funcs:Label1(Text)
 		local Frame = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
@@ -589,7 +593,7 @@ function Library:NewTab(Name, Image)
 		Title.Text = TT
 	end
 
-	function Funcs:Button(Name, Callback)
+	function Funcs:NewButton(Name, useless_info_v1, Callback)
 		local Button = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
@@ -650,7 +654,11 @@ function Library:NewTab(Name, Image)
 		end)
 	end
 
-	function Funcs:Slider(Name, limit, func)
+	function Funcs:NewSlider(Name, useless_info_v1, maxvalue_v1, minvalue_v1, func)
+        local limit = {
+            [1] = minvalue_v1,
+            [2] = maxvalue_v1
+        }
 		local Slider = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
