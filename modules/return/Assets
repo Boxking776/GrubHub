@@ -1,8 +1,10 @@
 local AssetTable = {
 ["ExploreIcon"] = "rbxassetid://4335479121",
-["MainIcon"] = "rbxassetid://4483362748",
-["SettingsIcon"] = "rbxassetid://4483345737",
-["MenuOpenIcon"] = "rbxassetid://7313669986"
+["MainIcon"] = "rbxassetid://7314182970",
+["SettingsIcon"] = "rbxassetid://7314154591",
+["MenuOpenIcon"] = "rbxassetid://7314241105",
+["CreditsIcon"] = "rbxassetid://7314179994",
+["TeleportIcon"] = "rbxassetid://7314158357",
 }
 
 return AssetTable
