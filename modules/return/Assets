@@ -4,4 +4,4 @@ local AssetTable = {
 ["SettingsIcon"] = "rbxassetid://4483345737"
 }
 
-return game:GetService("HttpService"):JSONEncode(AssetTable)
+return AssetTable
