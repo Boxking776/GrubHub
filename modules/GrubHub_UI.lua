@@ -145,7 +145,7 @@ function Library:Draggable(frame, parent)
     end)
 end
 
-function Library:CreateLib(Name, useless_info_v1)
+function Library.CreateLib(Name, useless_info_v1)
 	
     local ImageId = Assets['MenuOpenIcon']
 
