@@ -46,6 +46,9 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 local Chat = game:GetService("Chat")
 
+local Assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/GrubHub/main/modules/return/Assets"))()
+
+repeat wait() until Assets ~= nil
 
 local Player = Players.LocalPlayer
 
@@ -142,12 +145,14 @@ function Library:Draggable(frame, parent)
     end)
 end
 
-function Library:Load(Name, ImageId)
-	--// Image ID Check
+function Library:Load(Name)
+	
+    local ImageId = Assets['MenuOpenIcon']
+
 	if ImageId then
-		SideButton.Image = "rbxassetid://"..ImageId
+		SideButton.Image = tostring(ImageId)
 	else
-		SideButton.Image = "rbxassetid://7285498496"
+		warn("Error loading UI Library")
 	end
 
 	OceanLib.Name = "GrubHub"
@@ -464,14 +469,12 @@ function Library:NewTab(Name, Image)
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	UIListLayout.Padding = UDim.new(0, 6)
-
-	if Image == "Exp" then
-		Image = "rbxassetid://4335479121"
-	elseif Image == "Main" then
-		Image = "rbxassetid://4483362748"
-	else
-		Image = "rbxassetid://4483345737"
-	end
+	
+    if Assets[Image] ~= nil then
+        Image = tostring(Assets[Image])
+    else
+        Image = ""
+    end
 
 	local Funcs = {}
 
