@@ -50,8 +50,8 @@ local Side = Instance.new("Frame")
 local Overlay = Instance.new("Frame")
 
 local Settings = {
-	Name = "Wave Hub",
-	UIVer = "1.0",
+	Name = "GrubHub",
+	UIVer = "5.2",
 
 	Cooldown = false
 }
@@ -159,6 +159,7 @@ function Library:Load(Name, ImageId)
 
     Overlay.Name = "Overlay"
     Overlay.Parent = Main
+	
     Overlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Overlay.BackgroundTransparency = 1.000
     Overlay.ClipsDescendants = true
