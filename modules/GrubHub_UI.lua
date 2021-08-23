@@ -781,7 +781,7 @@ function Library:NewTab(Name, Image)
 		end)
 	end
 
-	function Funcs:TextBox(Name, callback)
+	function Funcs:NewTextBox(Name, useless_info_v1, callback)
 		local TextBox = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
