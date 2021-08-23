@@ -411,6 +411,7 @@ function Library:CreateLib(Name, useless_info_v1)
 	if not Side.Visible then
 		Library:ToggleSide()
 	end
+    return Library
 end
 
 function Library:NewTab(Name, Image)
