@@ -852,6 +852,10 @@ function Library:NewTab(Name, Image)
 		end)
 	end
 
+    function Funcs:NewKeybind()
+        return nil
+    end
+
 	function Funcs:NewToggle(Name, useless_info_v1, Callback)
         local Default = false
 		local Toggle = Instance.new("Frame")
@@ -937,7 +941,7 @@ function Library:NewTab(Name, Image)
 			Callback(Bool)
 		end)
 	end
-	function Funcs:Dropdown(Name, Drops, Callback)
+	function Funcs:NewDropdown(Name, useless_info_v1, Drops, Callback)
 		local Dropdown = Instance.new("Frame")
 		local UICorner2 = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
@@ -1082,7 +1086,7 @@ function Library:NewTab(Name, Image)
 			end)
 		end
 	end
-    function Funcs:ColorPicker(Name, callback) 
+    function Funcs:NewColorPicker(Name, useless_info_v1, useless_info_v2, callback) 
 		local Picker = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
