@@ -145,7 +145,7 @@ function Library:Draggable(frame, parent)
     end)
 end
 
-function Library:Load(Name)
+function Library:CreateLib(Name, useless_info_v1)
 	
     local ImageId = Assets['MenuOpenIcon']
 
@@ -851,7 +851,8 @@ function Library:NewTab(Name, Image)
 		end)
 	end
 
-	function Funcs:Toggle(Name, Default, Callback)
+	function Funcs:NewToggle(Name, useless_info_v1, Callback)
+        local Default = false
 		local Toggle = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
