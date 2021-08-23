@@ -1,3 +1,10 @@
+
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    if v.Name == "GrubHub" then
+    v:Destroy()
+    end
+end
+
 local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
 local SideButton = Instance.new("ImageButton")
@@ -38,6 +45,7 @@ local StarterGui = game:GetService("StarterGui")
 local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 local Chat = game:GetService("Chat")
+
 
 local Player = Players.LocalPlayer
 
@@ -142,7 +150,7 @@ function Library:Load(Name, ImageId)
 		SideButton.Image = "rbxassetid://7285498496"
 	end
 
-	OceanLib.Name = "OceanLib"
+	OceanLib.Name = "GrubHub"
 	OceanLib.Parent = game:GetService("CoreGui")
 	OceanLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
