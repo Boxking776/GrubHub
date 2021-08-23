@@ -1,0 +1,7 @@
+local AssetTable = {
+["ExploreIcon"] = "rbxassetid://4335479121",
+["MainIcon"] = "rbxassetid://4483362748",
+["SettingsIcon"] = "rbxassetid://4483345737"
+}
+
+return game:GetService("HttpService"):JSONEncode(AssetTable)
