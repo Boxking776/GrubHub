@@ -495,8 +495,16 @@ function Library:NewTab(Name, Image)
         Image = Assets['CreditsIcon']
         end
         
+        if string.find(string.upper(Name),"PLAYER") then
+        Image = Assets['PlayerIcon']
+        end
+        
+        if string.find(string.upper(Name),"HOME") then
+        Image = Assets['HomeIcon']
+        end        
+        
         if Image == nil then
-        Image = ""
+        Image = Assets['DefaultTabIcon']
         end
     end
 
