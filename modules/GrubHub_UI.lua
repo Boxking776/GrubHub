@@ -100,6 +100,22 @@ function Library:ChangeMode(Mode)
 	end
 end
 
+local ConvertTable = {
+    ["Main"] = Main.BackgroundColor3,
+    ["Top Bar"] = TopBar.BackgroundColor3,
+    ["Bar"] = Bar.BackgroundColor3,
+    ["Side"] = Side.BackgroundColor3
+}
+
+function Library:ChangeColor(Element,color)
+    local Element = ConvertTable[tostring(Element)]
+    
+    if Element ~= nil then
+        Element = Color3.fromRGB(color)
+    else
+    warn("Element not Found")
+end
+
 function Library:Terminate()
 	if not Settings.Cooldown then
 		Settings.Cooldown = true
