@@ -474,7 +474,31 @@ function Library:NewTab(Name, Image)
     if Assets[Image] ~= nil then
         Image = tostring(Assets[Image])
     else
+
+        if string.find(string.upper(Name),"MAIN") then
+        Image = Assets['MainIcon']
+        end
+
+        if string.find(string.upper(Name),"TELE") then
+        Image = Assets['TeleportIcon']
+        end
+
+        if string.find(string.upper(Name),"SETTING") then
+        Image = Assets['SettingsIcon']
+        end
+
+        if string.find(string.upper(Name),"EXP") then
+        Image = Assets['ExploreIcon']
+        end
+
+        if string.find(string.upper(Name),"CRED") then
+        Image = Assets['CreditsIcon']
+        end
+
+    else 
+        if Image == nil
         Image = ""
+        end
     end
 
 	local Funcs = {}
