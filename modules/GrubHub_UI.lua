@@ -1,4 +1,3 @@
-
 for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
     if v.Name == "GrubHub" then
     v:Destroy()
@@ -99,7 +98,6 @@ function Library:ChangeMode(Mode)
 		Side.BackgroundColor3 = Color3.fromRGB(114, 114, 114)
 	end
 end
-
 
 function Library:Terminate()
 	if not Settings.Cooldown then
@@ -1274,7 +1272,7 @@ function Library:NewTab(Name, Image)
             local colourPickerCentre = Vector2.new(Picker.AbsolutePosition.X + (Picker.AbsoluteSize.X/2), Picker.AbsolutePosition.Y + (Picker.AbsoluteSize.Y/2))
             local h = (math.pi - math.atan2(colourPickerCentre.Y - centreOfWheel.Y, colourPickerCentre.X - centreOfWheel.X)) / (math.pi * 2)
             local s = (centreOfWheel - colourPickerCentre).Magnitude / (ColourWheel.AbsoluteSize.X/2)
-            local v = math.abs((DarknessPicker:WaitForChild("Slider").AbsolutePosition.Y - DarknessPicker:WaitForChild("Slider").AbsolutePosition.Y) / :WaitForChild("Slider").AbsoluteSize.Y - 1)
+            local v = math.abs((DarknessPicker.Slider.AbsolutePosition.Y - DarknessPicker.Slider.AbsolutePosition.Y) / DarknessPicker.Slider.AbsoluteSize.Y - 1)
             
             
             local hsv = Color3.fromHSV(math.clamp(h, 0, 1), math.clamp(s, 0, 1), math.clamp(v, 0, 1))
@@ -1312,8 +1310,7 @@ function Library:NewTab(Name, Image)
             if distanceFromWheel <= ColourWheel.AbsoluteSize.X/2 and buttonDown then
                 Picker.Position = UDim2.new(0, mousePos.X - ColourWheel.AbsolutePosition.X, 0, mousePos.Y - ColourWheel.AbsolutePosition.Y)
             elseif movingSlider then
-
-                DarknessPicker:WaitForChild("Slider").Position = UDim2.new(DarknessPicker:WaitForChild("Slider").Position.X.Scale, 0, 0, 
+                DarknessPicker.Slider.Position = UDim2.new(DarknessPicker.Slider.Position.X.Scale, 0, 0, 
                     math.clamp(mousePos.Y - DarknessPicker.AbsolutePosition.Y, 0, DarknessPicker.AbsoluteSize.Y)
                 )	
             end
