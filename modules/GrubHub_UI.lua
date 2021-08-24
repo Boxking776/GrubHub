@@ -499,7 +499,7 @@ function Library:NewTab(Name, Image)
         Image = ""
         end
     end
-end
+
 
 	local Funcs = {}
 
