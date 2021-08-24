@@ -115,6 +115,7 @@ function Library:ChangeColor(Element,color)
     else
     warn("Element not Found")
 end
+end
 
 function Library:Terminate()
 	if not Settings.Cooldown then
