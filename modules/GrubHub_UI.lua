@@ -500,7 +500,11 @@ function Library:NewTab(Name, Image)
         
         if string.find(string.upper(Name),"HOME") then
         Image = Assets['HomeIcon']
-        end        
+        end
+
+        if string.find(string.upper(Name),"GUN") or string.find(string.upper(Name),"WEAPON") then
+        Image = Assets['GunIcon']
+        end          
         
         if Image == nil then
         Image = Assets['DefaultTabIcon']
