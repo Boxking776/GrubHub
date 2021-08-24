@@ -7,7 +7,8 @@ local AssetTable = {
 ["TeleportIcon"] = "rbxassetid://7314158357",
 ["HomeIcon"] = "rbxassetid://7319370485",
 ["PlayerIcon"] = "rbxassetid://7319369204",
-["DefaultTabIcon"] = "rbxassetid://7319408209"
+["DefaultTabIcon"] = "rbxassetid://7319408209",
+["GunIcon"] = "rbxassetid://7322192377"
 }
 
 return AssetTable
