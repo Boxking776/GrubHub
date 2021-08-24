@@ -100,23 +100,6 @@ function Library:ChangeMode(Mode)
 	end
 end
 
-function Library:ChangeColor(Element,color)
-
-    print(tostring(color).." : "..Element)
-
-    if Element == "Main" then
-    Main.BackgroundColor3 = color
-    elseif Element == "Top Bar" then
-    TopBar.BackgroundColor3 = color
-    elseif Element == "Bar" then
-    Bar.BackgroundColor3 = color
-    elseif Element == "Side" then
-    Side.BackgroundColor3 = color
-    else
-
-    warn("Element not found you retard!!")
-    end
-end
 
 function Library:Terminate()
 	if not Settings.Cooldown then
