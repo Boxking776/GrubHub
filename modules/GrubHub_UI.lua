@@ -100,21 +100,21 @@ function Library:ChangeMode(Mode)
 	end
 end
 
-local ConvertTable = {
-    ["Main"] = Main.BackgroundColor3,
-    ["Top Bar"] = TopBar.BackgroundColor3,
-    ["Bar"] = Bar.BackgroundColor3,
-    ["Side"] = Side.BackgroundColor3
-}
-
 function Library:ChangeColor(Element,color)
-    local Element = ConvertTable[tostring(Element)]
-    
-    if Element ~= nil then
-        Element = Color3.fromRGB(color)
+
+    print(tostring(color).." : "..Element)
+
+    if Element == "Main" then
+    Main.BackgroundColor3 = color
+    elseif Element == "Top Bar" then
+    TopBar.BackgroundColor3 = color
+    elseif Element == "Bar" then
+    Bar.BackgroundColor3 = color
+    elseif Element == "Side" then
+    Side.BackgroundColor3 = color
     else
-    warn("Element not Found")
-end
+
+    warn("Element not found you retard!!")
 end
 
 function Library:Terminate()
