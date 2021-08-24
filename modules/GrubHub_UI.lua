@@ -494,12 +494,12 @@ function Library:NewTab(Name, Image)
         if string.find(string.upper(Name),"CRED") then
         Image = Assets['CreditsIcon']
         end
-
-    else 
-        if Image == nil
+        
+        if Image == nil then
         Image = ""
         end
     end
+end
 
 	local Funcs = {}
 
