@@ -115,6 +115,7 @@ function Library:ChangeColor(Element,color)
     else
 
     warn("Element not found you retard!!")
+    end
 end
 
 function Library:Terminate()
