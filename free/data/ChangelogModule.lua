@@ -2,6 +2,10 @@ local UIMODULE = {}
 
 UIMODULE.LoadChangelogs = function(Date,UpdateNum)
 
+for i,v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "UpdateLog" then v:Destroy() end
+end
+
 local UpdateLog = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -202,6 +206,13 @@ UIPadding_3.PaddingTop = UDim.new(0.100000001, 0)
 UIPadding_4.Parent = UpdateLog
 UIPadding_4.PaddingTop = UDim.new(0, -18)
 
+Ok.MouseButton1Down:Connect(function()
+    UpdateLog.Enabled = false
+end)
+
+Close.MouseButton1Down:Connect(function()
+    UpdateLog.Enabled = false
+end)
 end
 
 return UIMODULE
