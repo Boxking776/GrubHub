@@ -182,6 +182,7 @@ Ok.AutoButtonColor = false
 Ok.Image = "rbxassetid://6869680115"
 Ok.ScaleType = Enum.ScaleType.Slice
 Ok.SliceCenter = Rect.new(55, 55, 95, 95)
+Ok.Text = "Discord"
 
 TextLabel.Parent = Ok
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
