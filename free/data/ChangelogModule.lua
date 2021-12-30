@@ -182,6 +182,8 @@ Ok.Size = UDim2.new(0.5, 0, 0.224999994, 0)
 Ok.ZIndex = 6
 Ok.AutoButtonColor = false
 Ok.Image = "rbxassetid://6869680115"
+Ok.HoverImage = "rbxassetid://6903539993"
+Ok.PressedImage = "rbxassetid://6903534547"
 Ok.ScaleType = Enum.ScaleType.Slice
 Ok.SliceCenter = Rect.new(55, 55, 95, 95)
 
