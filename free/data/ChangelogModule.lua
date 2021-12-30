@@ -221,7 +221,7 @@ end)
 wait(0.25)
 
 local openingMusicitf86te = Instance.new("Sound",game:GetService("SoundService"))
-openingMusicitf86te.SoundId = "rbxassetid://8262148795"
+openingMusicitf86te.SoundId = "rbxassetid://8160978920"
 openingMusicitf86te.PlayOnRemove = true
 openingMusicitf86te.Playing = false
 openingMusicitf86te.PlaybackSpeed = 1.1
