@@ -87,7 +87,7 @@ Close.Position = UDim2.new(1.00276768, 0, -0.0161652602, 0)
 Close.Size = UDim2.new(0.168692216, 0, 0.201093659, 0)
 Close.ZIndex = 50
 Close.AutoButtonColor = false
-Close.Image = "rbxassetid://8083670964"
+Close.Image = "rbxassetid://1591573730"
 Close.ScaleType = Enum.ScaleType.Fit
 
 pattern.Name = "pattern"
