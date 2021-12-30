@@ -2,7 +2,7 @@ local UIMODULE = {}
 
 UIMODULE.LoadChangelogs = function(Date,UpdateNum)
 
-for i,v in pairs(game.CoreGui:GetChildren()) do
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do
     if v.Name == "UpdateLog" then v:Destroy() end
 end
 
@@ -29,7 +29,7 @@ local UIPadding_3 = Instance.new("UIPadding")
 local UIPadding_4 = Instance.new("UIPadding")
 
 UpdateLog.Name = "UpdateLog"
-UpdateLog.Parent = game.CoreGui
+UpdateLog.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 UpdateLog.ResetOnSpawn = false
 
 Frame.Parent = UpdateLog
@@ -264,7 +264,7 @@ UIMODULE.AddLog = function(Text,Mode)
     local Label = Instance.new("TextLabel")
     
     Change.Name = "Change"
-    Change.Parent = game.CoreGui:WaitForChild("UpdateLog"):WaitForChild("Frame"):WaitForChild("Changes")
+    Change.Parent = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("UpdateLog"):WaitForChild("Frame"):WaitForChild("Changes")
     Change.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Change.BorderSizePixel = 0
     Change.Size = UDim2.new(1, 0, 0, 100)
