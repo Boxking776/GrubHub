@@ -207,10 +207,14 @@ UIPadding_4.Parent = UpdateLog
 UIPadding_4.PaddingTop = UDim.new(0, -18)
 
 Ok.MouseButton1Down:Connect(function()
+    Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
+    wait(2)
     UpdateLog.Enabled = false
 end)
 
 Close.MouseButton1Down:Connect(function()
+    Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
+    wait(2)
     UpdateLog.Enabled = false
 end)
 end
