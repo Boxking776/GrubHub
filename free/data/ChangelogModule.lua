@@ -222,7 +222,7 @@ Close.MouseButton1Down:Connect(function()
     openingMusicitf86te.PlayOnRemove = true
     openingMusicitf86te.Playing = false
     openingMusicitf86te:Destroy()
-    wait(0.5)
+    wait(1.2)
     Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
     wait(2)
     UpdateLog:Destroy()
