@@ -209,14 +209,61 @@ UIPadding_4.PaddingTop = UDim.new(0, -18)
 Ok.MouseButton1Down:Connect(function()
     Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
     wait(2)
-    UpdateLog.Enabled = false
+    UpdateLog:Destroy()
 end)
 
 Close.MouseButton1Down:Connect(function()
     Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
     wait(2)
-    UpdateLog.Enabled = false
+    UpdateLog:Destroy()
 end)
+end
+
+UIMODULE.AddLog = function(Text,Mode)
+    
+    local starterString = ""
+    if Mode == true then starterString = "[+] " end
+    if Mode == false then starterString = "[-] " end
+    if Mode == nil then starterString = "[~] " end
+    
+    local fullText = ""
+    if Mode ~= "SUBTITLE" or Mode ~= "MISC" then
+    fullText = starterString..Text
+    end
+    
+    if Mode == "SUBTITLE" then
+        fullText = " ~ "..Text.." ~ "
+    end
+    
+    if Mode == "MISC" then
+        fullText = Text
+    end
+    
+    local Change = Instance.new("Frame")
+    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+    local Label = Instance.new("TextLabel")
+    
+    Change.Name = "Change"
+    Change.Parent = game.CoreGui:WaitForChild("UpdateLog"):WaitForChild("Frame"):WaitForChild("Changes")
+    Change.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Change.BorderSizePixel = 0
+    Change.Size = UDim2.new(1, 0, 0, 100)
+    
+    UIAspectRatioConstraint.Parent = Change
+    UIAspectRatioConstraint.AspectRatio = 10.000
+    
+    Label.Name = "Label"
+    Label.Parent = Change
+    Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Label.BackgroundTransparency = 1.000
+    Label.BorderSizePixel = 0
+    Label.Size = UDim2.new(1, 0, 1, 0)
+    Label.Font = Enum.Font.FredokaOne
+    Label.TextColor3 = Color3.fromRGB(59, 177, 252)
+    Label.TextScaled = true
+    Label.TextSize = 18.000
+    Label.TextWrapped = true
+    Label.Text = fullText
 end
 
 return UIMODULE
