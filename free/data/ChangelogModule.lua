@@ -216,6 +216,12 @@ openingMusicitf86te:Destroy()
 end)
 
 Close.MouseButton1Down:Connect(function()
+    local openingMusicitf86te = Instance.new("Sound",game:GetService("SoundService"))
+    openingMusicitf86te.SoundId = "rbxassetid://7222026049"
+    openingMusicitf86te.Volume = 1.5
+    openingMusicitf86te.PlayOnRemove = true
+    openingMusicitf86te.Playing = false
+    openingMusicitf86te:Destroy()
     Frame:TweenPosition(UDim2.new(1.5, 0,0, 1.5))
     wait(2)
     UpdateLog:Destroy()
