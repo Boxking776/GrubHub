@@ -290,6 +290,6 @@ UIMODULE.AddLog = function(Text,Mode)
     Label.Text = fullText
 end
 
-UIMODULE.FunctionEnabled = true
+UIMODULE.FunctionEnabled = false
 
 return UIMODULE
