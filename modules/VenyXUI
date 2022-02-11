@@ -2100,7 +2100,7 @@ do
 		dropdown = self:getModule(dropdown)
 		
 		if title then
-			dropdown.Search.TextBox.Text = title
+			dropdown.Search.TextBox.Text = tostring(title)
 		end
 		
 		local entries = 0
@@ -2141,12 +2141,12 @@ do
 			
 			button.MouseButton1Click:Connect(function()
 				if callback then
-					callback(value, function(...)
+					callback(tostring(value), function(...)
 						self:updateDropdown(dropdown, ...)
 					end)	
 				end
 
-				self:updateDropdown(dropdown, value, nil, callback)
+				self:updateDropdown(dropdown, tostring(value), nil, callback)
 			end)
 			
 			entries = entries + 1
