@@ -1791,7 +1791,7 @@ do
 		end)
 		
 		search.TextBox.Focused:Connect(function()
-			if search.Button.Rotation == 0 then
+			if search.Button.Rotation == 0 or forceopen == true then
 				self:updateDropdown(dropdown, nil, list, callback)
 			end
 			
@@ -1804,10 +1804,14 @@ do
 		
 		search.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
 			if focused then
-				local list = utility:Sort(search.TextBox.Text, list)
-				list = #list ~= 0 and list 
+				local slist = utility:Sort(search.TextBox.Text, list)
+				slist = #slist ~= 0 and slist 
 				
-				self:updateDropdown(dropdown, nil, list, callback)
+				if slist == nil and forceopen == false then
+					self:updateDropdown(dropdown, nil, list, callback)
+				elseif slist ~= nil then
+					self:updateDropdown(dropdown, nil, slist, callback)
+				end
 			end
 		end)
 		
