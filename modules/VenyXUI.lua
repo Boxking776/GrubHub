@@ -1817,7 +1817,7 @@ do
 		
 		local updatedropdownlist = function(newlist)
 		    list = type(newlist) == "table" and newlist or {}
-		    if search.Button.Rotation == 0 forceopen == true then
+		    if search.Button.Rotation == 0 or forceopen == true then
 			self:updateDropdown(dropdown, nil, list, callback)
 		    else
 			self:updateDropdown(dropdown, nil, nil, callback)
