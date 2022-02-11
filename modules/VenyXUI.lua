@@ -1687,7 +1687,8 @@ do
 		return slider
 	end
 	
-	function section:addDropdown(title, list, callback)
+	function section:addDropdown(title, list, callback, forceopen)
+		forceopen = type(forceopen) == "boolean" and forceopen or false
 		local dropdown = utility:Create("Frame", {
 			Name = "Dropdown",
 			Parent = self.container,
@@ -1777,8 +1778,12 @@ do
 		
 		list = list or {}
 		
+		if forceopen == true then
+		    self:updateDropdown(dropdown, nil, list, callback)
+		end
+		
 		search.Button.MouseButton1Click:Connect(function()
-			if search.Button.Rotation == 0 then
+			if search.Button.Rotation == 0 or forceopen == true then
 				self:updateDropdown(dropdown, nil, list, callback)
 			else
 				self:updateDropdown(dropdown, nil, nil, callback)
@@ -1812,7 +1817,7 @@ do
 		
 		local updatedropdownlist = function(newlist)
 		    list = type(newlist) == "table" and newlist or {}
-		    if search.Button.Rotation == 0 then
+		    if search.Button.Rotation == 0 forceopen == true then
 			self:updateDropdown(dropdown, nil, list, callback)
 		    else
 			self:updateDropdown(dropdown, nil, nil, callback)
