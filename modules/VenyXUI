@@ -439,7 +439,7 @@ do
 		
 		table.insert(self.sections, section)
 		
-		return section
+		return section, self
 	end
 	
 	-- functions
