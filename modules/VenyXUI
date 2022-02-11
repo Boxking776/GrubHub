@@ -2131,7 +2131,7 @@ do
 					Size = UDim2.new(1, -10, 1, 0),
 					ZIndex = 3,
 					Font = Enum.Font.Gotham,
-					Text = value,
+					Text = tostring(value),
 					TextColor3 = themes.TextColor,
 					TextSize = 12,
 					TextXAlignment = "Left",
