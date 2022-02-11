@@ -1810,7 +1810,11 @@ do
 			self:Resize()
 		end)
 		
-		return dropdown
+		local updatedropdownlist = function(newlist)
+		    list = type(newlist) == "table" and newlist or {}
+		end
+		
+		return dropdown, updatedropdownlist
 	end
 	
 	-- class functions
