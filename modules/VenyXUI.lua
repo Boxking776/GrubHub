@@ -1814,6 +1814,8 @@ do
 		    list = type(newlist) == "table" and newlist or {}
 		    if search.Button.Rotation == 0 then
 			self:updateDropdown(dropdown, nil, list, callback)
+		    else
+			self:updateDropdown(dropdown, nil, nil, callback)
 		    end
 		end
 		
