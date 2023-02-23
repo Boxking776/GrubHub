@@ -21,8 +21,8 @@ local Tab = PlayerTab:AddSection({
 
 
 Tab:AddTextbox({
-	Name = "Alt account username",
-	Default = "BreakLoop",
+	Name = "Alt account username (optional- only for mail spoof)",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		getgenv().Username = Value
